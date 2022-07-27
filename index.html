@@ -583,6 +583,46 @@
                 </div>
             </div>
         </div>
+        <a href="#" class="to-top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+            </svg>
+        </a>
+        <style>
+            .bi-chevron-up {
+                font-weight: bold;
+                color: white;
+            }
+
+            .to-top {
+                background: #ff891e;
+                position: fixed;
+                bottom: 16px;
+                left: 32px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 32px;
+                color: #1f1f1f;
+                text-decoration: none;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 1s;
+
+            }
+
+            .to-top.active {
+                bottom: 32px;
+                pointer-events: auto;
+                opacity: 1;
+                transition: all 0.4s;
+            }
+        </style>
     </footer>
 
     <!-- menu-mobile -->
@@ -591,14 +631,14 @@
 
 
 
-    <div class="menu-mobile">
+    <div class=" menu-mobile">
         <ul>
             <li style="background-color: #007bff;"><a><img src="./images/logo.png" alt="" srcset=""></a>
             </li>
             <li><a>TRANG CHỦ</a>
             </li>
-            <li><a style="display: flex; justify-items: center; align-items: center;">TOUR TRONG NUÓC &nbsp;<svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            <li><a style="display: flex; justify-items: center; align-items: center;">TOUR TRONG NUÓC
+                    &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-caret-down-fill" viewBox="0 0 16 16">
 
                         <path
@@ -609,8 +649,8 @@
             <li><a>Du lịch miền Trung</a></li>
             <li><a>Du lịch miền Nam</a></li>
 
-            <li><a style="display: flex; justify-items: center; align-items: center;">TOUR NUÓC NGOÀI &nbsp;<svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            <li><a style="display: flex; justify-items: center; align-items: center;">TOUR NUÓC NGOÀI
+                    &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                         <path
                             d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
@@ -724,6 +764,21 @@
         });
 
     </script>
+    <!-- back  to top -->
+    <script>
+        const toTop = document.querySelector(".to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                toTop.classList.add("active");
+            } else {
+                toTop.classList.remove("active");
+            }
+        })
+    </script>
+
+
+
 </body>
 
 </html>
